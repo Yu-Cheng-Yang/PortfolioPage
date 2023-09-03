@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu Cheng Yang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#page1">Introduction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#page2">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#page3">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#page4">Contact me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contactForm">Contact Form</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="page1" class="p-5">
+        <h1 class="display-4">Hello there!</h1>
+        <p>My name is Yu Cheng Yang. I am an engineer and software developer and this is my personal website!</p>
+        <p>I am a graduate of McGill university with a major in Mining Engineering and minor in Computer Science.</p>
+        <p>Currently looking for work as a software developer!</p>
+        <img src="{{ url_for('static', filename='images/portrait.jpg') }}" alt="Featured Image" class="framed-image">
+
+    </section>
+    <section id="page2" class="p-5">
+        <h1 class="display-4">Skills</h1>
+        <p>I am skilled in the following programming languages!</p>
+        <p>•	Python</p>
+        <p>•	Java</p>
+        <p>•	C++/C</p>
+        <p>•	C#</p>
+        <p>•	MIPS assembly</p>
+        <p>•	MATLAB</p>
+        <p>•	HTML and CSS</p>
+        <p>•	Javascript</p>
+        <h1 class="display-4">Specific fields with experience</h1>
+        <p>•	Web development in front and back end</p>
+        <p>•	Data structures and algorithms</p>
+        <p>•	Object oriented programming</p>
+        <p>•    Functional programming</p>
+        <p>•	Machine learning & AI with Azure AI certification</p>
+
+
+
+    </section>
+    <section id="page3" class="p-5">
+        <h1 class="display-4">Projects</h1>
+        
+        <a href="https://www.tandfonline.com/doi/full/10.1080/17457300.2022.2164311">Research and calculation of optimal underground mining truck paths, calculated in Python!</a>
+        <p>Yahoo Stock Lookup App</p>
+        <a href="{{ url_for('send_file', filename='IMDB.pdf') }}">Pytorch sentiment analysis of IMDB reviews using BERT model</a>
+    </section>
+    <section id="page4" class="p-5">
+        <h1 class="display-4">Contact me</h1>
+        <p>Phone number: 514-895-6338</p>
+        <p>Email: yu_cheng_yang@hotmail.com</p>
+        <a href="https://www.linkedin.com/in/yu-cheng-yang-689232170/">Linkedin</a>
+    </section>
+    <section id="contactForm" class="p-5">
+        <h1 class="display-4">Contact Form</h1>
+        <form action="/submit_form" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $("form").submit(function(event){
+                event.preventDefault(); // Prevent the default form submission
+    
+                $.ajax({
+                    url: '/submit_form',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response){
+                        alert(response.message);
+                    },
+                    error: function(error){
+                        alert("Failed to submit. Please try again.");
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2023 Yu Cheng Yang. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    text-align:center;
+}
+
+#page1 {
+    background-color: #f2f2f2;    
+    background-image: url('./images/page1.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+#page2 {
+    background-color: #d4d4d4;
+    background-image: url('./images/page2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#page3 {
+    background-color: #b6b6b6;
+    background-image: url('./images/page3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#page4 {
+    background-color: #b6b6b6;
+    background-image: url('./images/page4.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+#contactForm {
+    background-color: #b6b6b6;
+    text-align:left;
+}
+.framed-image {
+    max-width: 80%;  /* Adjust as per your preference */
+    height: auto;
+    border: 10px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+}
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    text-align:center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
