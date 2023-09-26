@@ -52,7 +52,7 @@ section {
     text-align:left;
 }
 .framed-image {
-    max-width: 80%;  /* Adjust as per your preference */
+    max-width: 80%; 
     height: auto;
     border: 10px solid #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
